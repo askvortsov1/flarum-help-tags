@@ -25,9 +25,9 @@
     "flarum-extension": {
       "title": "Flarum Help Tags",
       "icon": {
-        "name": "",
-        "backgroundColor": "",
-        "color": ""
+        "name": "fas fa-question-circle",
+        "backgroundColor": "#6932d1",
+        "color": "#fff"
       }
     },
     "flagrow": {
