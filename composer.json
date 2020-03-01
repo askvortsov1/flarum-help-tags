@@ -1,5 +1,5 @@
 {
-  "name": "askvortsov/flarum-private-tags",
+  "name": "askvortsov/flarum-help-tags",
   "description": "Allow members to post in a tag, but only allow users to view/reply to tags they have access to.",
   "keywords": [
     "flarum"
@@ -18,12 +18,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "Askvortsov\\FlarumPrivateTags\\": "src/"
+      "Askvortsov\\FlarumHelpTags\\": "src/"
     }
   },
   "extra": {
     "flarum-extension": {
-      "title": "Flarum Private Tags",
+      "title": "Flarum Help Tags",
       "icon": {
         "name": "",
         "backgroundColor": "",

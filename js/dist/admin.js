@@ -113,7 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var flarum_extend__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! flarum/extend */ "flarum/extend");
 /* harmony import */ var flarum_extend__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(flarum_extend__WEBPACK_IMPORTED_MODULE_0__);
 
-app.initializers.add('askvortsov/flarum-private-tags', function () {
+app.initializers.add('askvortsov/flarum-help-tags', function () {
   Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["override"])(app, 'getRequiredPermissions', function (original, permission) {
     var required = original(permission);
     required = required.filter(function (a) {

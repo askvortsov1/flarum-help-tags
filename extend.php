@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of askvortsov/flarum-private-tags.
+ * This file is part of askvortsov/flarum-help-tags.
  *
  * Copyright (c) 2020 Alexander Skvortsov.
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Askvortsov\FlarumPrivateTags;
+namespace Askvortsov\FlarumHelpTags;
 
-use Askvortsov\FlarumPrivateTags\Access;
+use Askvortsov\FlarumHelpTags\Access;
 use Flarum\Extend;
 use Illuminate\Contracts\Events\Dispatcher;
 

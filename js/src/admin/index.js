@@ -1,7 +1,7 @@
 import { extend, override } from 'flarum/extend';
 
 
-app.initializers.add('askvortsov/flarum-private-tags', () => {
+app.initializers.add('askvortsov/flarum-help-tags', () => {
     override(app, 'getRequiredPermissions', (original, permission) => {
         var required = original(permission);
 
