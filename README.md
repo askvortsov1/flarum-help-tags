@@ -24,6 +24,8 @@ Give the "start discussions" and "start discussions without approval" permission
 
 Give the "view discussions" permission in a tag to groups of users who should be able to see ALL discussions in a tag.
 
+I highly recommend explaining the nature of help tags in the tag description. This was not included by default because of how many different possible use cases there are.
+
 ### Links
 
 - [Packagist](https://packagist.org/packages/askvortsov/flarum-help-tags)
