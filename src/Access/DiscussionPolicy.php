@@ -45,22 +45,4 @@ class DiscussionPolicy extends AbstractPolicy
         // Hide discussions which have tags that the user is not allowed to see.
         $query->orWhere('user_id', '=', $actor->id);
     }
-
-    /**
-     * @param User $actor
-     * @param Builder $query
-     * @param string $ability
-     */
-    public function findWithPermission(User $actor, Builder $query, $ability)
-    {
-        // If a discussion requires a certain permission in order for it to be
-        // visible, then we can check if the user has been granted that
-        // permission for any of the discussion's tags.
-        $query->whereExists(function ($query) use ($actor, $ability) {
-            return $query->selectRaw('1')
-                ->from('discussion_tag')
-                ->whereIn('tag_id', Tag::getIdsWhereCan($actor, 'discussion.' . $ability))
-                ->whereColumn('discussions.id', 'discussion_id');
-        });
-    }
 }
