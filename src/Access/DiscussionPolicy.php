@@ -43,6 +43,6 @@ class DiscussionPolicy extends AbstractPolicy
     public function find(User $actor, Builder $query)
     {
         // Hide discussions which have tags that the user is not allowed to see.
-        $query->orWhere('user_id', '=', $actor->id);
+        $query->orWhere('user_id', $actor->id);
     }
 }
