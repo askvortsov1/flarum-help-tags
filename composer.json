@@ -1,6 +1,6 @@
 {
   "name": "askvortsov/flarum-help-tags",
-  "description": "Allow members to post in a tag, but only allow users to view/reply to tags they have access to.",
+  "description": "Allow members to post in a tag, but only see discussions that they created or have been granted access to.",
   "keywords": [
     "flarum"
   ],
