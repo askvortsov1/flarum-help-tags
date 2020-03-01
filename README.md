@@ -2,7 +2,7 @@
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/askvortsov/flarum-help-tags.svg)](https://packagist.org/packages/askvortsov/flarum-help-tags)
 
-A [Flarum](http://flarum.org) extension. Allow members to post in a tag, but only allow users to view/reply to tags they have access to.
+A [Flarum](http://flarum.org) extension. Now, your users can create discussions in certain tags, but only certain groups can see/reply to posts in those tags. For instance, if you want to have a tag for private support, users could create posts there and manage their own posts, but could not see posts that other users have made. However, designated groups could see and reply to all posts in the tag.
 
 ### Installation
 
@@ -17,6 +17,12 @@ composer require askvortsov/flarum-help-tags
 ```sh
 composer update askvortsov/flarum-help-tags
 ```
+
+### Usage
+
+Give the "start discussions" and "start discussions without approval" permissions in a tag to groups of users who should be able to start discussions, but not see ALL discussions in a tag.
+
+Give the "view discussions" permission in a tag to groups of users who should be able to see ALL discussions in a tag.
 
 ### Links
 
