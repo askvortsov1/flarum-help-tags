@@ -27,6 +27,6 @@ class TagPolicy extends AbstractPolicy
      */
     public function find(User $actor, Builder $query)
     {
-        $query->orWhereIn('id', Tag::getIdsWhereCan($actor, 'startDiscussions'));
+        $query->orWhereIn('id', Tag::getIdsWhereCan($actor, 'startDiscussion'));
     }
 }
