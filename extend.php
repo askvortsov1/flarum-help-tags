@@ -16,7 +16,6 @@ use Flarum\Extend;
 use Illuminate\Contracts\Events\Dispatcher;
 
 return [
-    
     (new Extend\Frontend('admin'))
         ->js(__DIR__.'/js/dist/admin.js'),
 
