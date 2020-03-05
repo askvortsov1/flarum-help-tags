@@ -112,6 +112,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var flarum_extend__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! flarum/extend */ "flarum/extend");
 /* harmony import */ var flarum_extend__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(flarum_extend__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var flarum_components_PermissionGrid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! flarum/components/PermissionGrid */ "flarum/components/PermissionGrid");
+/* harmony import */ var flarum_components_PermissionGrid__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(flarum_components_PermissionGrid__WEBPACK_IMPORTED_MODULE_1__);
+
 
 app.initializers.add('askvortsov/flarum-help-tags', function () {
   Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["override"])(app, 'getRequiredPermissions', function (original, permission) {
@@ -121,7 +124,26 @@ app.initializers.add('askvortsov/flarum-help-tags', function () {
     });
     return required;
   });
+  Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_components_PermissionGrid__WEBPACK_IMPORTED_MODULE_1___default.a.prototype, 'viewItems', function (items) {
+    items.add('viewTag', {
+      icon: 'fas fa-eye',
+      label: app.translator.trans('askvortsov-help-tags.admin.permissions.view_tag_label'),
+      permission: 'discussion.viewTag',
+      allowGuest: true
+    }, 100);
+  });
 });
+
+/***/ }),
+
+/***/ "flarum/components/PermissionGrid":
+/*!******************************************************************!*\
+  !*** external "flarum.core.compat['components/PermissionGrid']" ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = flarum.core.compat['components/PermissionGrid'];
 
 /***/ }),
 

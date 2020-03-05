@@ -22,5 +22,7 @@ return [
     function (Dispatcher $events) {
         $events->subscribe(Access\DiscussionPolicy::class);
         $events->subscribe(Access\TagPolicy::class);
-    }
+    },
+
+    new Extend\Locales(__DIR__ . '/resources/locale')
 ];
