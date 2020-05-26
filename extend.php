@@ -1,17 +1,16 @@
 <?php
 
 /*
- * This file is part of askvortsov/flarum-help-tags.
+ * This file is part of askvortsov/flarum-help-tags
  *
- * Copyright (c) 2020 Alexander Skvortsov.
+ *  Copyright (c) 2020 Alexander Skvortsov.
  *
- * For the full copyright and license information, please view the LICENSE.md
- * file that was distributed with this source code.
+ *  For detailed copyright and license information, please view the
+ *  LICENSE file that was distributed with this source code.
  */
 
 namespace Askvortsov\FlarumHelpTags;
 
-use Askvortsov\FlarumHelpTags\Access;
 use Flarum\Extend;
 use Illuminate\Contracts\Events\Dispatcher;
 
@@ -24,5 +23,5 @@ return [
         $events->subscribe(Access\TagPolicy::class);
     },
 
-    new Extend\Locales(__DIR__ . '/resources/locale')
+    new Extend\Locales(__DIR__.'/resources/locale'),
 ];

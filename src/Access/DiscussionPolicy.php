@@ -1,10 +1,12 @@
 <?php
 
 /*
- * This file is part of Flarum.
+ * This file is part of askvortsov/flarum-help-tags
  *
- * For detailed copyright and license information, please view the
- * LICENSE file that was distributed with this source code.
+ *  Copyright (c) 2020 Alexander Skvortsov.
+ *
+ *  For detailed copyright and license information, please view the
+ *  LICENSE file that was distributed with this source code.
  */
 
 namespace Askvortsov\FlarumHelpTags\Access;
@@ -36,12 +38,12 @@ class DiscussionPolicy extends AbstractPolicy
     }
 
     /**
-     * @param User $actor
+     * @param User    $actor
      * @param Builder $query
      */
     public function find(User $actor, Builder $query)
     {
-        if (! $actor->isGuest()) {
+        if (!$actor->isGuest()) {
             $utilQuery = $query->getQuery()->newQuery();
             if ($query->getQuery()->wheres[0]['type'] === 'Basic' && $query->getQuery()->wheres[0]['column'] === 'id') {
                 $utilQuery->orWhere(function ($subquery) use ($actor, $query) {
