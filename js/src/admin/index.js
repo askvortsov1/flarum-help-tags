@@ -1,5 +1,4 @@
-import { extend, override } from "flarum/extend";
-import PermissionGrid from "flarum/components/PermissionGrid";
+import { override } from "flarum/extend";
 
 app.initializers.add("askvortsov/flarum-help-tags", () => {
   override(app, "getRequiredPermissions", (original, permission) => {
@@ -10,18 +9,16 @@ app.initializers.add("askvortsov/flarum-help-tags", () => {
     return required;
   });
 
-  extend(PermissionGrid.prototype, "viewItems", (items) => {
-    items.add(
-      "viewTag",
-      {
-        icon: "fas fa-eye",
-        label: app.translator.trans(
-          "askvortsov-help-tags.admin.permissions.view_tag_label"
-        ),
-        permission: "discussion.viewTag",
-        allowGuest: true,
-      },
-      100
-    );
-  });
+  app.extensionData.for("askvortsov-help-tags").registerPermission(
+    {
+      icon: "fas fa-eye",
+      label: app.translator.trans(
+        "askvortsov-help-tags.admin.permissions.view_tag_label"
+      ),
+      permission: "discussion.viewTag",
+      allowGuest: true,
+    },
+    "view",
+    100
+  );
 });

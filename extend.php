@@ -11,17 +11,19 @@
 
 namespace Askvortsov\FlarumHelpTags;
 
+use Flarum\Discussion\Discussion;
 use Flarum\Extend;
-use Illuminate\Contracts\Events\Dispatcher;
+use Flarum\Tags\Tag;
 
 return [
     (new Extend\Frontend('admin'))
         ->js(__DIR__.'/js/dist/admin.js'),
 
-    function (Dispatcher $events) {
-        $events->subscribe(Access\DiscussionPolicy::class);
-        $events->subscribe(Access\TagPolicy::class);
-    },
+    (new Extend\ModelVisibility(Discussion::class))
+        ->scope(Access\ScopeDiscussionVisibility::class, 'viewDiscussionsInRestrictedTags'),
+
+    (new Extend\ModelVisibility(Tag::class))
+        ->scope(Access\ScopeTagVisibility::class),
 
     new Extend\Locales(__DIR__.'/resources/locale'),
 ];

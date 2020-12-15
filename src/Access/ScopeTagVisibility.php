@@ -11,26 +11,21 @@
 
 namespace Askvortsov\FlarumHelpTags\Access;
 
-use Flarum\Discussion\Discussion;
-use Flarum\User\AbstractPolicy;
+use Flarum\Tags\Tag;
 use Flarum\User\User;
 use Illuminate\Database\Eloquent\Builder;
 
-class DiscussionPolicy extends AbstractPolicy
+class ScopeTagVisibility
 {
-    /**
-     * {@inheritdoc}
-     */
-    protected $model = Discussion::class;
-
     /**
      * @param User    $actor
      * @param Builder $query
      */
-    public function findDiscussionsInRestrictedTags(User $actor, Builder $query)
+    public function __invoke(User $actor, Builder $query)
     {
-        if (!$actor->isGuest()) {
-            $query->orWhere('discussions.user_id', $actor->id);
-        }
+        $query
+            ->orWhereIn('id', Tag::getIdsWhereCan($actor, 'startDiscussion'))
+            ->orWhereIn('id', Tag::getIdsWhereCan($actor, 'discussion.viewTag'))
+            ->orWhereIn('id', Tag::getIdsWhereCan($actor, 'viewTag'));
     }
 }
