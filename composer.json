@@ -30,7 +30,7 @@
   "extra": {
     "flarum-extension": {
       "title": "Help Tags",
-      "type": "other",
+      "category": "other",
       "icon": {
         "name": "fas fa-question-circle",
         "backgroundColor": "#6932d1",
