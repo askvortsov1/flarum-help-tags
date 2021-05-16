@@ -1,10 +1,12 @@
 <?php
 
 /*
- * This file is part of Flarum.
+ * This file is part of askvortsov/flarum-help-tags
  *
- * For detailed copyright and license information, please view the
- * LICENSE file that was distributed with this source code.
+ *  Copyright (c) 2021 Alexander Skvortsov.
+ *
+ *  For detailed copyright and license information, please view the
+ *  LICENSE file that was distributed with this source code.
  */
 
 namespace Flarum\Tags\Tests\integration\api\discussions;
@@ -30,23 +32,23 @@ class ListTest extends TestCase
                 ['id' => 1, 'name' => 'Help Tag', 'slug' => '1', 'position' => 0, 'parent_id' => null, 'is_restricted' => true],
             ],
             'users' => [
-                $this->normalUser()
+                $this->normalUser(),
             ],
             'discussions' => [
                 ['id' => 1, 'title' => 'admin discussion', 'user_id' => 1, 'comment_count' => 1],
-                ['id' => 2, 'title' => 'user discussion', 'user_id' => 2, 'comment_count' => 1]
+                ['id' => 2, 'title' => 'user discussion', 'user_id' => 2, 'comment_count' => 1],
             ],
             'posts' => [
                 ['id' => 1, 'discussion_id' => 1, 'user_id' => 1, 'type' => 'comment', 'content' => '<t><p></p></t>'],
-                ['id' => 2, 'discussion_id' => 2, 'user_id' => 2, 'type' => 'comment', 'content' => '<t><p></p></t>']
+                ['id' => 2, 'discussion_id' => 2, 'user_id' => 2, 'type' => 'comment', 'content' => '<t><p></p></t>'],
             ],
             'discussion_tag' => [
                 ['discussion_id' => 1, 'tag_id' => 1],
-                ['discussion_id' => 2, 'tag_id' => 1]
+                ['discussion_id' => 2, 'tag_id' => 1],
             ],
             'group_permission' => [
                 ['group_id' => Group::MEMBER_ID, 'permission' => 'tag1.startDiscussion'],
-            ]
+            ],
         ]);
     }
 

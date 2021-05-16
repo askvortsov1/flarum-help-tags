@@ -1,10 +1,12 @@
 <?php
 
 /*
- * This file is part of Flarum.
+ * This file is part of askvortsov/flarum-help-tags
  *
- * For detailed copyright and license information, please view the
- * LICENSE file that was distributed with this source code.
+ *  Copyright (c) 2021 Alexander Skvortsov.
+ *
+ *  For detailed copyright and license information, please view the
+ *  LICENSE file that was distributed with this source code.
  */
 
 namespace Flarum\Tags\Tests\integration\api\discussions;
@@ -33,7 +35,7 @@ class CreateTest extends TestCase
             ],
             'group_permission' => [
                 ['group_id' => Group::MEMBER_ID, 'permission' => 'tag1.startDiscussion'],
-            ]
+            ],
         ]);
     }
 
@@ -45,20 +47,20 @@ class CreateTest extends TestCase
         $response = $this->send(
             $this->request('POST', '/api/discussions', [
                 'authenticatedAs' => 2,
-                'json' => [
+                'json'            => [
                     'data' => [
                         'attributes' => [
-                            'title' => 'test - too-obscure',
+                            'title'   => 'test - too-obscure',
                             'content' => 'predetermined content for automated testing - too-obscure',
                         ],
                         'relationships' => [
                             'tags' => [
                                 'data' => [
-                                    ['type' => 'tags', 'id' => 1]
-                                ]
-                            ]
-                        ]
-                    ]
+                                    ['type' => 'tags', 'id' => 1],
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ])
         );
