@@ -12,8 +12,8 @@
     "forum": "https://discuss.flarum.org/d/23004-flarum-help-tags"
   },
   "require": {
-    "flarum/core": "^0.1.0-beta.16",
-    "flarum/tags": "^0.1.0-beta.16"
+    "flarum/core": "^1.0.0",
+    "flarum/tags": "^1.0.0"
   },
   "authors": [
     {
@@ -54,8 +54,8 @@
     "test:setup": "Sets up a database for use with integration tests. Execute this only once."
   },
   "require-dev": {
-    "flarum/core": "0.1.x-dev",
-    "flarum/tags": "0.1.x-dev",
+    "flarum/core": "*@dev",
+    "flarum/tags": "*@dev",
     "flarum/testing": "*@dev"
   }
 }
