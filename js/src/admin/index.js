@@ -4,7 +4,7 @@ app.initializers.add("askvortsov/flarum-help-tags", () => {
   override(app, "getRequiredPermissions", (original, permission) => {
     var required = original(permission);
 
-    if (/(viewTag|startDiscussion)$/.test(permission)) {
+    if (/(viewTag|startDiscussion|startWithoutApproval)$/.test(permission)) {
       return required.filter((a) => !/viewForum$/.test(a));
     }
 
