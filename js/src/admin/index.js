@@ -4,7 +4,9 @@ app.initializers.add("askvortsov/flarum-help-tags", () => {
   override(app, "getRequiredPermissions", (original, permission) => {
     var required = original(permission);
 
-    required = required.filter((a) => !/viewDiscussions$/.test(a));
+    if (/(viewTag|startDiscussion)$/.test(permission)) {
+      return required.filter((a) => !/viewForum$/.test(a));
+    }
 
     return required;
   });
@@ -15,7 +17,8 @@ app.initializers.add("askvortsov/flarum-help-tags", () => {
       label: app.translator.trans(
         "askvortsov-help-tags.admin.permissions.view_tag_label"
       ),
-      permission: "discussion.viewTag",
+      permission: "viewTag",
+      tagScoped: true,
       allowGuest: true,
     },
     "view",

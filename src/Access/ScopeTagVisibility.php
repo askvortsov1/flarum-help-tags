@@ -17,15 +17,10 @@ use Illuminate\Database\Eloquent\Builder;
 
 class ScopeTagVisibility
 {
-    /**
-     * @param User    $actor
-     * @param Builder $query
-     */
     public function __invoke(User $actor, Builder $query)
     {
         $query
-            ->orWhereIn('id', Tag::getIdsWhereCan($actor, 'startDiscussion'))
-            ->orWhereIn('id', Tag::getIdsWhereCan($actor, 'discussion.viewTag'))
-            ->orWhereIn('id', Tag::getIdsWhereCan($actor, 'viewTag'));
+            ->orWhereIn('id', Tag::whereHasPermission($actor, 'startDiscussion')->select('tags.id'))
+            ->orWhereIn('id', Tag::whereHasPermission($actor, 'viewTag')->select('tags.id'));
     }
 }

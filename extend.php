@@ -19,8 +19,11 @@ return [
     (new Extend\Frontend('admin'))
         ->js(__DIR__.'/js/dist/admin.js'),
 
+    (new Extend\Policy())
+        ->globalPolicy(Access\GlobalPolicy::class),
+
     (new Extend\ModelVisibility(Discussion::class))
-        ->scope(Access\ScopeDiscussionVisibility::class, 'viewDiscussionsInRestrictedTags'),
+        ->scope(Access\ScopeDiscussionVisibility::class, 'viewForumInRestrictedTags'),
 
     (new Extend\ModelVisibility(Tag::class))
         ->scope(Access\ScopeTagVisibility::class),
