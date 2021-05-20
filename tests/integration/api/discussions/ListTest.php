@@ -48,7 +48,7 @@ class ListTest extends TestCase
                 ['discussion_id' => 1, 'tag_id' => 1],
                 ['discussion_id' => 2, 'tag_id' => 1],
                 ['discussion_id' => 3, 'tag_id' => 1],
-            ]
+            ],
         ]);
     }
 
@@ -75,10 +75,10 @@ class ListTest extends TestCase
     public function user_sees_own_discussion_and_discussion_shown_to_all()
     {
         $this->prepareDatabase(['group_permission' => [
-                ['group_id' => Group::MEMBER_ID, 'permission' => 'tag1.startDiscussion'],
-            ],
+            ['group_id' => Group::MEMBER_ID, 'permission' => 'tag1.startDiscussion'],
+        ],
         ]);
-    
+
         $response = $this->send(
             $this->request('GET', '/api/discussions', [
                 'authenticatedAs' => 2,
@@ -92,8 +92,8 @@ class ListTest extends TestCase
     }
 
     /**
-    //  * @test
-    //  */
+     * //  * @test
+     * //  */
     // public function user_sees_own_discussion_and_discussion_shown_to_all_if_start_discussion_perms_revoked()
     // {
     //     $this->prepareDatabase([

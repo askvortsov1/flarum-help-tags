@@ -45,5 +45,5 @@ return [
     new Extend\Locales(__DIR__.'/resources/locale'),
 
     (new Extend\Event())
-        ->listen(Saving::class, SaveShowToAllToDatabase::class)
+        ->listen(Saving::class, SaveShowToAllToDatabase::class),
 ];

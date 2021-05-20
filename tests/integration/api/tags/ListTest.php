@@ -103,7 +103,7 @@ class ListTest extends TestCase
         $this->prepareDatabase([
             'group_permission' => [
                 ['group_id' => Group::GUEST_ID, 'permission' => 'tag5.viewTag'],
-            ]
+            ],
         ]);
 
         $response = $this->send(
