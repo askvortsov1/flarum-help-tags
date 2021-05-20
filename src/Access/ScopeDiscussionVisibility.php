@@ -25,5 +25,7 @@ class ScopeDiscussionVisibility
         if (!$actor->isGuest()) {
             $query->orWhere('discussions.user_id', $actor->id);
         }
+
+        $query->orWhere('discussions.show_to_all', true);
     }
 }
